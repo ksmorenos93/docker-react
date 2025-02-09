@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Esta aplicación se desplego con integracion continua
+          Esta es una prueba para paola
         </p>
         <a
           className="App-link"
