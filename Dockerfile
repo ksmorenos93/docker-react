@@ -13,6 +13,7 @@ RUN npm run build  ## this is another option
 # the build folder will be created in WORKDIR
 
 FROM nginx 
+EXPOSE 80
 
 # we will copy from the phase builder to the nginx folder
 COPY --from=builder /app/build /usr/share/nginx/html
