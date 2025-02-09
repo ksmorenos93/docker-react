@@ -1,0 +1,20 @@
+version: '3'
+services: # the containers so in this case we have 2
+  web:
+    build: 
+      context: .  # where we want all the files and folder for this image to be pulled from
+      dockerfile: Dockerfile.dev # the file use to create the image
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules # la carpeta que no vamos a tener en cuenta
+      - .:/app # .(local folder) : /app(inside container folder)
+    
+  tests:
+    build: 
+      context: .  # where we want all the files and folder for this image to be pulled from
+      dockerfile: Dockerfile.dev # the file use to create the image
+    volumes:
+      - /app/node_modules # la carpeta que no vamos a tener en cuenta
+      - .:/app # .(local folder) : /app(inside container folder)
+    command: ["npm", "run", "test"]
